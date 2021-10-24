@@ -1,4 +1,4 @@
-package com.example.never_gonna_give_you_up_lyrics
+package com.jedymatt.never_gonna_give_you_up_lyrics
 
 import io.flutter.embedding.android.FlutterActivity
 
