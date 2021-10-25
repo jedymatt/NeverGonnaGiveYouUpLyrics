@@ -1,16 +1,19 @@
-# never_gonna_give_you_up_lyrics
+# NeverGonnaGiveYouUpLyrics
 
-A new Flutter project.
+Application for the lyrics of never gonna give you up.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+To run a released version of the app:
 
-A few resources to get you started if this is your first Flutter project:
+```bash
+flutter run --release
+```
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+To run a debugging version of the app:
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```bash
+flutter run
+```
+
+Note: To see more details when executing the command above add this `-v` or `--verbose` at the end.
