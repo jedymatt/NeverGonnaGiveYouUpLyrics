@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:youtube_player_iframe/youtube_player_iframe.dart';
 
 void main() => runApp(const App());
 
@@ -38,20 +40,49 @@ class BodyContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: [
-        Container(
-          padding: const EdgeInsets.only(left: 10, right: 10, top: 10),
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(8),
-            child: const Image(
-              image: AssetImage('assets/rickroll_4k.jpg'),
-            ),
-          ),
-        ),
-        const Expanded(
+      children: const [
+        SongVideo(),
+        Expanded(
           child: SongLyrics(),
         ),
       ],
+    );
+  }
+}
+
+class SongVideo extends StatefulWidget {
+  const SongVideo({Key? key}) : super(key: key);
+
+  @override
+  _SongVideoState createState() => _SongVideoState();
+}
+
+class _SongVideoState extends State<SongVideo> {
+  late YoutubePlayerController _controller;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = YoutubePlayerController(
+      initialVideoId: 'dQw4w9WgXcQ',
+      params: const YoutubePlayerParams(
+        showFullscreenButton: false,
+        autoPlay: false,
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.only(left: 10, right: 10, top: 10),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(8),
+        child: YoutubePlayerControllerProvider(
+          controller: _controller,
+          child: const YoutubePlayerIFrame(),
+        ),
+      ),
     );
   }
 }
@@ -98,7 +129,7 @@ class SongLyrics extends StatelessWidget {
       child: SingleChildScrollView(
         child: Container(
           padding: const EdgeInsets.only(left: 10, right: 10),
-          margin: const EdgeInsets.only(top: 10, bottom: 10),
+          margin: const EdgeInsets.only(top: 10),
           child: Text(
             lyrics,
             textAlign: TextAlign.center,
