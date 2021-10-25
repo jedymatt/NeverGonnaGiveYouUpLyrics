@@ -28,6 +28,7 @@ class HomePage extends StatelessWidget {
         title: const Center(
           child: Text('Never Gonna Give You Up Lyrics'),
         ),
+        elevation: 0,
       ),
       body: const BodyContent(),
     );
@@ -128,8 +129,8 @@ class SongLyrics extends StatelessWidget {
       interactive: true,
       child: SingleChildScrollView(
         child: Container(
-          padding: const EdgeInsets.only(left: 10, right: 10),
-          margin: const EdgeInsets.only(top: 10),
+          // padding: const EdgeInsets.only(),
+          margin: const EdgeInsets.only(top: 10, left: 10, right: 10),
           child: Text(
             lyrics,
             textAlign: TextAlign.center,
