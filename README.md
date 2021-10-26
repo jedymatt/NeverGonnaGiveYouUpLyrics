@@ -16,4 +16,4 @@ To run a debugging version of the app:
 flutter run
 ```
 
-Note: To see more details when executing the command above add this `-v` or `--verbose` at the end.
+Note: To see more details when executing the command above, add this `-v` or `--verbose` at the end of the command.
