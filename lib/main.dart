@@ -69,6 +69,7 @@ class _SongVideoState extends State<SongVideo> {
       params: const YoutubePlayerParams(
         showFullscreenButton: false,
         autoPlay: false,
+        loop: true,
       ),
     );
   }
